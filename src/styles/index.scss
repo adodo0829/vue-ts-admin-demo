@@ -1,0 +1,86 @@
+// @import './variables.scss'; // Already imported in style-resources-loader
+// @import './mixins.scss'; // Already imported in style-resources-loader
+@import './transition.scss';
+@import './svgicon.scss';
+
+/* Global scss */
+
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+
+html {
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+#app {
+  height: 100%;
+}
+
+i{
+  font-style: normal;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+a,
+a:focus,
+a:hover {
+  color: inherit;
+  outline: none;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+.clearfix {
+  @include clearfix;
+}
+
+.app-container {
+  padding: 20px;
+}
+
+.multi-select {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #e2f6ff;
+  border: 1px solid #86cfff;
+  span {
+    font-size: 12px;
+    i {
+      font-size: 14px;
+      color: $main-color;
+    }
+    &:nth-of-type(1) {
+      margin: 0 10px;
+    }
+    &:nth-of-type(1) + span {
+     transform: translateY(-1px)
+    }
+    &:nth-of-type(1) ~ span {
+      margin-right: 10px;
+    }
+  }
+}

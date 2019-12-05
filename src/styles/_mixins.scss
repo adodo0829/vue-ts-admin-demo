@@ -1,0 +1,73 @@
+/* Mixins */
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin ab-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin ellipsis($rowCount: 1) {
+  @if $rowCount <=1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $rowCount;
+    -webkit-box-orient: vertical;
+  }
+}
+
+@mixin router-layout {
+  // height: 100%;
+  .router-nav {
+    height: 50px;
+    padding-left: 16px;
+    background-color: #fff;
+    a {
+      display: inline-block;
+      line-height: 50px;
+      color: #868686;
+      margin-right: 32px;
+      span {
+        font-size: 18px;
+        margin-left: 2px;
+      }
+      &:first-child {
+        svg {
+          transform: translateY(-1px)
+        }
+      }
+      &:hover {
+        color: $main-color;
+      }
+    }
+    .router-link-active {
+      color: $main-color;
+      border-bottom: 2px solid $main-color;
+    }
+  }
+  .router-content-view {
+    // height: 100%;
+    margin: 16px;
+    padding: 12px;
+    background-color: #fff;
+  }
+}
